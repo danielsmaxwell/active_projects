@@ -2,4 +2,4 @@
 
 The modules for this class are as follows:
 
-- RStudio IDE
+- _rstudio_intro: The RSTudio Integrated Development Environment (IDE)
