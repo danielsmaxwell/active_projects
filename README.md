@@ -1,3 +1,4 @@
 ## Data Story Architect 
 
-Base modules for my Data Story Architect class.
+The modules for this class are as follows:
+-- RStudio IDE
