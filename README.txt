@@ -7,3 +7,6 @@ https://github.com/mbonaci/mbo-storm/wiki/Integrate-Travis-CI-with-your-GitHub-r
 
 TestThat
 http://r-pkgs.had.co.nz/tests.html
+
+TestWhat
+https://github.com/datacamp/testwhat/wiki
