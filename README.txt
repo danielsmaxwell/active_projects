@@ -1,4 +1,4 @@
-Data Storytelling
+Data Storytelling in R (3 credit)
 
 Article + video on continuous integration to provide real-time feedback of student code submissions.
 https://blog.github.com/2017-03-01-real-time-feedback-for-students-using-continuous-integration-tools/
