@@ -7,3 +7,5 @@ An outstanding data story presentation combines skills from the four areas:
 
 Lessons Learned from Teaching an 11 Week Data Science Course
   http://www.dataschool.io/teaching-data-science/#moreconceptsthanmath
+
+
