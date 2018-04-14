@@ -5,3 +5,5 @@ An outstanding data story presentation combines skills from the four areas:
 3) Communication
 4) Creativity
 
+Lessons Learned from Teaching an 11 Week Data Science Course
+  http://www.dataschool.io/teaching-data-science/#moreconceptsthanmath
