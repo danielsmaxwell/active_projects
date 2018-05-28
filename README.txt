@@ -7,3 +7,8 @@ Technologies to investigate for this class:
     
 See also Jeff Leek eCOTS presentation.
         https://www.causeweb.org/cause/ecots/ecots18/keynotes/jeff-leek
+
+Facets of Data Storytelling
+        Impart statistical concepts packaged in stories.
+        Provide students with the tools to tell data stories.
+        Help students become intelligent consumers of data stories.
