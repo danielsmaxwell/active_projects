@@ -16,13 +16,16 @@ Facets of Data Storytelling
 R Joins 
         http://www.datasciencemadesimple.com/join-in-r-merge-in-r/
 
-Python 
+Python Introduction
         https://github.com/datacarpentry/python-ecology-lesson  (Pandas)
         https://github.com/swcarpentry/python-novice-gapminder
 
-R
+R Introduction
         https://github.com/datacarpentry/R-ecology-lesson/  
         https://github.com/swcarpentry/r-novice-gapminder
+
+Gapminder Data (Package)
+        https://github.com/jennybc/gapminder
 
 Genomics
         https://github.com/datacarpentry/wrangling-genomics
