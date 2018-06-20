@@ -13,7 +13,9 @@ Facets of Data Storytelling
         Provide students with the tools to tell data stories.
         Help students become intelligent consumers of data stories.
 
-Topics (D. Valle) -----------------------------------------------------
+Joins in R: http://www.datasciencemadesimple.com/join-in-r-merge-in-r/
+
+Topics -------------------------------------------------------------
 key computer programming concepts
 - loops
 - flow control
