@@ -29,6 +29,8 @@ key R concepts
 - types of objects (dataframes, lists, matrices, vectors, arrays)
 - manipulation of strings (grep, strsplit, paste)
 - math operators and logical operators(e.g., &, |, %in%) 
+- merging datasets
+- long/wide data formatting
 
 other useful concepts and ideas:
 - optimization
