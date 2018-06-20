@@ -13,9 +13,23 @@ Facets of Data Storytelling
         Provide students with the tools to tell data stories.
         Help students become intelligent consumers of data stories.
 
-Joins in R 
+R Joins 
         http://www.datasciencemadesimple.com/join-in-r-merge-in-r/
 
+Python 
+        https://github.com/datacarpentry/python-ecology-lesson  (Pandas)
+        https://github.com/swcarpentry/python-novice-gapminder
+
+R
+        https://github.com/datacarpentry/R-ecology-lesson/  
+        https://github.com/swcarpentry/r-novice-gapminder
+
+Genomics
+        https://github.com/datacarpentry/wrangling-genomics
+        
+SQL 
+        https://github.com/swcarpentry/sql-novice-survey
+        
 Topics -------------------------------------------------------------
 key computer programming concepts
 - loops
