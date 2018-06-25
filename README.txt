@@ -4,14 +4,14 @@ Technologies to investigate for this class:
     rstudio.cloud
     Amazon polly
     leanpub.com
-    
-See also Jeff Leek eCOTS presentation.
-        https://www.causeweb.org/cause/ecots/ecots18/keynotes/jeff-leek
 
 Facets of Data Storytelling
         Impart statistical concepts in data stories.
         Provide students with the tools to tell data stories.
         Help students become intelligent consumers of data stories.
+
+Jeff Leek eCOTS presentation.
+        https://www.causeweb.org/cause/ecots/ecots18/keynotes/jeff-leek
 
 R Joins 
         http://www.datasciencemadesimple.com/join-in-r-merge-in-r/
@@ -32,7 +32,10 @@ Genomics
         
 SQL 
         https://github.com/swcarpentry/sql-novice-survey
-        
+
+American Statistician (Think with Data)
+        https://www.tandfonline.com/doi/full/10.1080/00031305.2015.1094283
+   
 Topics -------------------------------------------------------------
 key computer programming concepts
 - loops
