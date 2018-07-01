@@ -59,5 +59,24 @@ other useful concepts and ideas:
 - optimization
 - sample(), random number generator, set.seed()
 
-
+------------------------------------------------------------------
+StoryStat Modules
+    RStudio IDE
+    Intro to Stats
+    Frequency Distributions
+    Basic Data Wrangling in R
+    Basic Graphing in R
+    Central Tendency
+    Variance
+    Standard Scores
+    Probability
+    Inferential Theory
+    One Sample Test (T-Test)
+    Two Sample Test (T-Test)
+    Multisample Test (ANOVA)
+    Post-Hoc Tests
+    Non-Parametric Statistics (Chi-Square)
+    Effect Size and Power
+    Correlation
+    Regression
 
