@@ -1,4 +1,4 @@
-This repository contains data story assets and documents for the myDataStory initiative.
+This repository contains assets and documents for active data science projects.
 
 Technologies to investigate for this class:
     rstudio.cloud
