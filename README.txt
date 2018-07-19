@@ -80,3 +80,11 @@ StoryStat Modules
     Correlation
     Regression
 
+----------------------------------------------------------------
+Courese for Data Science Major
+PHI2100 - Logic  (James Gillespie)
+MHF3202 - Sets and Logic (Louis Block)
+MAS4105 - Linear Algebra 1
+CIS4301 - Information and Database Systems
+
+
