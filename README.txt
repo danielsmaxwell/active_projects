@@ -81,7 +81,7 @@ StoryStat Modules
     Regression
 
 ----------------------------------------------------------------
-Courese for Data Science Major
+Courses for Data Science Major
 PHI2100 - Logic  (James Gillespie)
 MHF3202 - Sets and Logic (Louis Block)
 MAS4105 - Linear Algebra 1
