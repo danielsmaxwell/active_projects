@@ -1,0 +1,246 @@
+---
+title: "Data Management in R (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} Packages and Libraries
+
+The functions in R are organized in packages or libraries. The commonly used packages are preinstalled within R. However, if you need to use more specialized packages, you will need to install and then load the package before you can use functions available in that package.  
+
+Packages are installed and loaded in the Packages tab in the bottom right corner or through the dropdown menu at the top of the screen (Tools -> Install Packages).  
+
+If a package is already installed on your computer, it will be listed in this tab. To load this package so you can use it, hit the checkmark next to the name of the package.  
+
+If a package is not installed, click the 'Install' button at the top of the tab, type in the name of the package, and click 'Install'. Once it has been installed click the checkmark next to the name to load it.  
+
+Installed packages can also be loaded from the command line or within a script using the library function. 
+
+```{r eval=FALSE}
+
+library(popbio) #Load previously installed package 'popbio'
+```
+
+#\textcolor{blue}{1.2} Importing .CSV and .TXT files
+
+R can import data stored in a wide variety of file types (including Excel files), but the file type you'll probably encounter most frequently has a .csv or .txt extension. The .csv extension stands for "comma-separated values."
+
+> ### Note: A CSV file is recommended for R. 
+
+A .txt file, on the other hand, is a simple text file created with a program like Notepad. Instead of commas, text files often use hidden characters, the tab and newline characters for example, to separate values.
+
+## Using the Environment tab
+
+1. In the Environment tab, in the top right corner click on 'Import Dataset', and then 'From Text File...'.
+2. Choose the file that you want to import.
+3. Choose a name for the data - enter into the 'Name' blank. (This name cannot contain any spaces)
+4. Choose yes or no depending on whether or not the file has a Heading (column names)
+5. Choose the separator, decimal, quote, and na.strings depending on your data
+6. Click import  
+
+## Read Commands
+
+The following command can be typed into the console to import the data.
+
+For a CSV file:
+```{r eval=FALSE}
+data <- read.csv("data.csv", header=TRUE)
+```
+
+For a text file:
+```{r eval=FALSE}
+data <- read.table("data.txt", header = TRUE, sep=" ")
+```
+
+The first argument is the file name (found within the working directory set earlier).  
+
+The second argument, header, refers to whether or not the column names are listed in the first line of the file, TRUE is used for yes, FALSE for no.  
+
+The third argument, sep, refers to what is separating the values. A CSV uses commas, but a text document could use semicolons, colons, etc.  
+
+#\textcolor{blue}{1.3} Matrices and Data Frames
+
+## Matrices
+
+Matrices are two-dimensional, for example a 4 x 5 matrix has 4 rows and 5 columns. All values within the matrix must be of the same type, i.e., all numeric or all characters
+
+```{r}
+mymatrix <- matrix(1:4, nrow=2, ncol=2)
+mymatrix
+```
+
+The values of a matrix are accessed using their position, like for vectors, but for matrices it is necessary to designate the row and column.
+
+```{r}
+mymatrix[1,2]  # The value in row 1 column 2
+mymatrix[2,1]  # The value in row 2 column 1
+mymatrix[,2]   # The values for all rows, column 2
+mymatrix[1,]   # The values for row 1, and all columns
+mymatrix[1:2,] # The values from row 1 to 2, and all columns
+```
+
+Change the value in row 1 column 2 to 0
+```{r}
+mymatrix[1,2] <- 0
+mymatrix[1,2]
+```
+
+## Data Frames
+
+Data frames are the workhorses of R and are a more general form of matrix. The values do not have to be of the same type, but instead one data frame can contain numbers, characters, and factors.
+
+```{r}
+d <- c(1,2,3,4)
+e <- c("red", "white", "red", "blue")
+f <- factor(c("high", "low", "high", "high"))
+
+mydata <- data.frame(d,e,f)
+
+names(mydata) <- c("ID", "Color", "Level")
+
+mydata
+```
+
+The values of a data frame can be accessed in a variety of ways.
+
+```{r}
+mydata[1]    # Calls column 1
+mydata["ID"] # Another way to access column 1 - using the column name
+mydata$ID    # Last way to access column 1 - also using the column name  
+mydata[1,]   # Access the first row
+```
+
+## Useful Functions for Data Sets
+
+R has a lot of built-in datasets that we will use throughout the course. If you use *data()* you can see a list of all available datasets. In this case we will use the Loblolly dataset, which contains growth information about a set of Loblolly pine trees. If you type *help(Loblolly)* you can read more information about this dataset. 
+
+```{r}
+str(Loblolly) # Structure of the dataframe
+```
+```{r eval=FALSE}
+Loblolly        # Displays all the data
+head(Loblolly)  # Displays first 6 rows of data
+tail(Loblolly)  # Displays last 6 rows of data
+```
+```{r}
+nrow(Loblolly)  # Number of rows
+ncol(iris)      # Number of columns
+names(Loblolly) # Column names
+
+length(Loblolly$height) # Number of data points in that column
+```
+
+
+#\textcolor{blue}{1.4} Subsetting Data
+
+Sometimes if we have a large dataset for multiple categories, we might want to subset it into smaller datasets for analysis.  
+
+For example, let's look at the Loblolly dataset, which gives us information on the height and age of loblolly pine trees from different seeds.  
+
+We can create separate datasets for each of the seeds.  
+
+```{r eval=FALSE}
+# This creates a new dataframe called 'seed301' which contains all columns of data 
+# for just the seed numbered 301
+seed301 <- subset(Loblolly, Loblolly$Seed == "301")
+
+# This creates a new dataframe called 'seed303' which contains all columns of data 
+# for just the seed numbered 303
+seed303 <- subset(Loblolly, Loblolly$Seed == "303")
+```
+
+We can also subset based on criteria - in this case such as age or height.
+
+```{r eval=FALSE}
+# This dataframe only contains the data on Loblolly trees 
+# at less than 5 years of age (only the trees at 3 years of age)
+Loblolly2 <- subset(Loblolly, Loblolly$age < 5)
+```
+
+#\textcolor{blue}{1.5} Merging Data Frames
+
+Sometimes you need to merge two dataframes using a column (variable) that is shared between them.  
+
+Let's create two small dataframes and then we can merge them based on the shared column.
+
+```{r}
+dataA <- data.frame(year = seq(2000,2005), v1 = c(1,5,3,4,2,2))
+dataB <- data.frame(year = seq(2000,2005), v2 = c(2,4,3,5,5,5))
+```
+
+Combine the two dataframes using the *merge()* function.
+
+```{r}
+comb_data <- merge(dataA, dataB, by = "year")
+```
+
+And finally, take a look at the final product.
+
+```{r}
+comb_data
+```
+
+\newpage
+#\textcolor{blue}{1.6} Problem Set
+
+1. Open the 'PlantGrowth' built-in dataset and read the help file to learn about the data in this dataset.  
+
+2. Display the structure of the PlantGrowth data frame. What is included? How many observations and how many variables? What are the variable names?  
+
+3. What are three ways to display the data in column 1 of the PlantGrowth data frame?  
+
+4. How do you access the $5th$ row of data in the PlantGrowth data frame?  
+
+5. Display the first $6$ rows of the PlantGrowth data frame.  
+
+6. Display the last $6$ rows of the PlantGrowth data frame.  
+
+7. How many rows are in the PlantGrowth data frame?  
+
+8. How many columns are in the PlantGrowth data frame?  
+
+9. Look at the group column for the PlantGrowth data frame. How many options are there? Create a new data frame (called ctrl) that contains the data only for the 'ctrl' group.  
+
+10. Create a new data frame called GrowthHigh that only contains the data when the weight is over $5.50$. How many rows are in this new data frame?  
+
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+<div class="fold s">
+
+```{r eval = FALSE}
+data(PlantGrowth)
+help(PlantGrowth)
+
+str(PlantGrowth)
+#30 observations for 2 variables
+#weight and goup
+
+PlantGrowth$weight
+PlantGrowth[[1]]
+PlantGrowth[,1]
+
+head(PlantGrowth)
+tail(PlantGrowth)
+
+nrow(PlantGrowth)
+ncol(PlantGrowth)
+
+PlantGrowth$group #3 options
+ctrl <- subset(PlantGrowth, PlantGrowth$group == "ctrl")
+
+GrowthHigh <- subset(PlantGrowth, PlantGrowth$weight > 5.5)
+#8 rows
+```
+
+</div>
