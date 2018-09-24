@@ -1,5 +1,5 @@
 ---
-title: "Data Management in R (Instructional Worksheet)"
+title: "Creating Graphs in R (Instructional Worksheet)"
 output:
   html_document: default
   pdf_document: default
