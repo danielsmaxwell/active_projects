@@ -1,0 +1,64 @@
+---
+title: "Dispersion in R (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} Measuring Dispersion
+
+We will continue using the *trees* dataset from the last problem set to explore measures of dispersion, the spread or variability in a set of data. We are interested in the dispersion measures for tree height. 
+
+Range: difference between the minimum and maximum values
+
+```{r eval = FALSE}
+range(trees$Height)
+```
+
+Variance: measure of the distance of each value from the mean value 
+
+```{r eval = FALSE}
+var(trees$Height)
+```
+
+Standard deviation: the square root of variance (how much the values typically vary from the average value)
+
+```{r eval = FALSE}
+sd(trees$Height)
+```
+
+\newpage
+
+#\textcolor{blue}{1.2} Problem Set
+
+1. We will use the *Loblolly* dataset that we have previously been using. What is the range of values for tree height and tree age?  
+
+2. What is the variance and standard deviation of tree height?
+
+3. What is the variance and standard deviation of tree height for seed 301? Is it higher or lower than the overall tree height?
+
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+range(Loblolly$height)
+range(Loblolly$age)
+
+var(Loblolly$height)
+sd(Loblolly$height)
+
+var(Loblolly$height[Loblolly$Seed == 301])
+sd(Loblolly$height[Loblolly$Seed == 301])
+#var and sd are higher for seed 301 than overall
+```
+
+</div>
