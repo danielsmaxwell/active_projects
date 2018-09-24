@@ -1,0 +1,175 @@
+---
+title: "Central Tendency in R (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+
+#\textcolor{blue}{1.1} Descriptive Statistics
+
+We will use the *Loblolly* dataset that we have used in previous modules to explore basic descriptive statistics. But first, we need to look at the structure of the dataset.  
+
+```{r eval=FALSE}
+# Examine the structure of the dataframe.
+str(Loblolly)
+```
+
+This dataset has three variables: height, age, and seed. Let's explore the height variable.  
+
+```{r eval=FALSE}
+# Display the data in the height column
+Loblolly$height
+```
+
+Now let's calculate the descriptive statistics for this variable using a variety of functions for summarizing data.
+
+Minimum - smallest value  
+```{r eval=FALSE}
+min(Loblolly$height)
+```
+
+Maximum - largest value
+```{r eval=FALSE}
+max(Loblolly$height)
+```
+
+Median - middle number when all of the values are organized from smallest to largest
+```{r eval=FALSE}
+median(Loblolly$height)
+```
+
+Quantiles
+```{r eval=FALSE}
+quantile(Loblolly$height)
+```
+
+Mean or average value
+```{r eval=FALSE}
+mean(Loblolly$height)
+```
+
+The above values can be calculated all at once using the *summary* summary command.
+```{r eval=FALSE}
+summary(Loblolly$height)
+```
+
+>###Note: All of the values are rounded to the nearest integer before these values are calculated in the summary command, which is why they are slightly different than the values calculated above using the individual commands.
+
+#\textcolor{blue}{1.2} Missing Values
+
+Datasets are rarely perfect, and there is often data missing. First, here is a simple example with one value missing.
+
+```{r eval=FALSE}
+a <- c(1,2,3,NA,5)
+
+mean(a)
+
+mean(a, na.rm = TRUE)
+```
+
+You'll notice that if you don't include the na.rm argument in your function, R is not able to calcalate the mean value but instead returns a *NA*. 
+
+Next, let's us see how to deal with missing data in a real dataset. Let's take the *Loblolly* dataset used above, and let's change a couple of the height values to *NA*. 
+
+```{r eval=FALSE}
+Loblolly2 <- Loblolly #create a new dataset called Loblolly2 
+Loblolly2$height[1:2] <- NA #change the first two height values to NA
+```
+
+Let's try to calculate the mean of the new set of height values.
+
+```{r eval=FALSE}
+mean(Loblolly2$height)
+```
+
+We get a value of *NA* - so let's use the trick we just learned.
+
+```{r eval=FALSE}
+mean(Loblolly2$height, na.rm = TRUE)
+```
+
+This trick can definitely work in all situations; however, sometimes we might not be interested in the missing data, and we'd rather just exclude that data from the dataset permanently. 
+
+```{r eval=FALSE}
+Loblolly3 <- na.omit(Loblolly2)
+```
+
+If you look at the number of rows in the *Loblolly3* dataset, you'll see there are 2 less than in the previous dataset - this is because the two rows with missing height values were deleted.
+
+\newpage
+
+#\textcolor{blue}{1.3} Problem Set
+
+1. For this assignment, we will use the *trees* built-in dataset. This dataset gives measurements of girth, height, and volume of timber for 31 black cherry trees. Explore the structure of this dataset.  
+
+2. What is the minimum and maximum girth for the black cherry trees?  
+
+3. What is the mean and median girth of black cherry trees?  
+
+4. What is the minimum and maximum height for the black cherry trees?  
+
+5. What are the quantile (0%,25%,50%,75%,100%) heights for black cherry trees? 
+
+6. Use the *summary* command to find the descriptive statistics of height for black cherry trees. What is the mean and median?  
+
+7. Create a boxplot of the height of black cherry trees. Do the values on the plot match the values from the *summary* command?
+
+8. Plot the height versus the girth of black cherry trees. Make sure to include a title and axis labels. What is the general relationship between the two variables?
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+str(trees)
+
+min(trees$Girth)
+max(trees$Girth)
+
+mean(trees$Girth)
+median(trees$Girth)
+
+min(trees$Height)
+max(trees$Height)
+
+quantile(trees$Height)
+
+summary(trees$Height)
+#mean = 76
+#median = 76
+
+boxplot(trees$Height)
+
+plot(trees$Height, trees$Girth, main = "Black Cherry Tree Height vs. Girth", xlab = "Height", ylab = "Girth")
+#as height increases girth increases
+
+```
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
