@@ -8,3 +8,5 @@
 5. [Dispersion](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 6. [Standard Scores](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/standard_scores.html)
 7. [Probability](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/probability.html)
+8. [One Sample TTest](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
+9. [Two Sample TTest](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/two_sample_ttest.html)
