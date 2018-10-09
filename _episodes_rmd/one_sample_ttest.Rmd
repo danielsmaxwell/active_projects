@@ -1,0 +1,84 @@
+---
+title: "One Sample Test (T-Test) (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} One Sample T-Test
+
+**Goal:** Compare the mean value of a sample ($\mu$) with a constant value ($\mu_0$). 
+
+We are interested in whether the following null or alternate hypotheses is supported by the data.
+
+$$H_0: \mu = \mu_0$$
+$$H_1: \mu \ne \mu_0$$
+
+Because we are interested in comparing the population mean of one sample to a constant value, we will use a one sample t-test. In R, we use the *t.test()* function. 
+Let's use the *ChickWeight* built-in dataset that we have used in previous modules. Just to recap, this dataset gives us the weight of different chicks that were fed 4 different diets.
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight, mu = 100)
+```
+
+The above code compares the mean weight of all chicks to a mean weight of 100 grams. If we look at the output, we are given the t-value, the degrees of freedom (df), the p-value, the 95% confidence interval, and the sample estimates. From these results, we know the actual mean weight for all chicks is 121.8183, with a confidence interval of 116 to 128. Because the confidence interval does not cross the given constant mean (100), our results support the alternative hypothesis, the true mean is not equal to the constant given mean (100). We also know this because the p-value is significant (less than 0.05). 
+
+In this example, we are running a 2-sided one sample t-test because we are interested in whether or not the mean of the sample is equal or not equal to the constant mean of 100. If we are intersted in whether or not the sample mean is greater than or less than the constant mean, we can run a 1-sided one sampel t-test instead. 
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight, mu = 100, alternative = "less")
+t.test(ChickWeight$weight, mu = 100, alternative = "greater")
+```
+
+From these two test results, we can see that the true sample mean is greater than the constant mean of 100. 
+
+Finally, if we want a different percent confidence interval in our results, we can change the value in our *t.test()* function. Let's change it to 99%.
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight, mu = 100, conf.level = 0.99)
+```
+
+You'll notice that the confidence interval presented is now 99%, but all of the other results are the same.
+
+#\textcolor{blue}{1.2} Problem Set
+
+1. Using the *ChickWeight* dataset again, let's run a one sample t-test to see if the mean weight for chick 1 is equal or not equal to 100 grams. Remember that we are only interested in chick 1 now, so make sure you subset your dataset for this particular chick.
+
+2. Is the mean weight for chick 1 significantly different than 100 grams? How do you know?
+
+3. What is the 95% confidence interval? the 99% confidence interval?
+
+4. Now, run a one sample t-test comparing the mean weight of chick 1 to a constant weight of 150 grams. What are your conclusions?
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight[ChickWeight$Chick==1], mu = 100)
+
+#chick 1 weight not significantly different than 100
+#p value = 0.4984 (>0.05)
+#confidence interval crosses 100
+#fail to reject null hypothesis
+
+#95% confidence interval (74.99 - 148.35)
+t.test(ChickWeight$weight[ChickWeight$Chick==1], mu=100, conf.level = 0.99)
+#99% confidence interval (59.91 - 163.43)
+
+t.test(ChickWeight$weight[ChickWeight$Chick==1], mu=150)
+#chick 1 weight significantly differnt than 150 
+#p value 0.042
+#95% confidence interval (74.99 - 148.35) - does not cross 0
+#support alternative hypothesis - reject null hypothesis
+```
+
+</div>
+
