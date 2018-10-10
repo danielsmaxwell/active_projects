@@ -1,0 +1,74 @@
+---
+title: "Two Sample Test (T-Test) (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} Two Sample T-Test
+
+**Goal:** Compare the mean value of two independent samples ($\mu_1$ and $\mu_2$). 
+
+We are interested in whether the following null or alternate hypotheses is supported by the data.
+
+$$H_0: \mu_1 = \mu_2$$
+$$H_1: \mu_1 \ne \mu_2$$
+
+Because we are now interested in comparing the population mean of two samples, we will use a two sample t-test. For 2-sample t-tests we still use the *t.test()* function. 
+Let's use the *ChickWeight* built-in dataset again that we have used in previous modules. Just to recap, this dataset gives us the weight of different chicks that were fed 4 different diets.
+
+This time we are interested in the different diet that the chicks were fed. Let's compare the mean weight of chicks on diet 1 versus diet 2.
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight[ChickWeight$Diet== 1], ChickWeight$weight[ChickWeight$Diet==2])
+```
+
+Looking at the output of the t-test, we can see the true mean weight for chicks on diet 1 is 103 grams, while the true mean weight for chicks on diet 2 is 123 grams. The p-value for our test is 0.008995, which is less than 0.05 - therefore, we reject the null hypothesis and support the alternate hypothesis. The mean weight for chicks on diet 1 and 2 is significantly different. Lastly, the 95% percent confidence interval is the based around the difference in means between the two samples. Like in the 1-sample t-test we can add the conf.level argument in our function to get a different confidence interval (e.g. 99%). 
+
+If we were instead interested in whether the mean weight for diet 1 was greater or less than the mean weight for diet 2 instead of not equal to, we could run the two seperate tests like in the last module.
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight[ChickWeight$Diet == 1], ChickWeight$weight[ChickWeight$Diet == 2], alternative = "less")
+t.test(ChickWeight$weight[ChickWeight$Diet == 1], ChickWeight$weight[ChickWeight$Diet == 2], alternative = "greater")
+```
+
+From these two test results, we can see that the true sample mean weight for chicks on diet 1 is less than the mean weight for chicks on diet 2. 
+
+>###Note: In R, it does not matter if the sample size is equal or unequal between the two samples when running a t-test. In this situation the sample size is unequal - there is more data for diet 1 than diet 2.
+
+#\textcolor{blue}{1.3} Problem Set
+
+1. Using the *ChickWeight* dataset again, let's explore the other diets. Is the mean weight greater for diet 2 or diet 3? How do you know?
+
+2. Is the mean weight greater for diet 3 or diet 4? How do you know?
+
+3. Looking back over all of your results, if you wanted the greatest weight for your chicks, which diet would you put them on? (Hint: you might need to run a couple more additional t-tests to get this answer)
+
+<div class="fold s">
+
+```{r eval = FALSE}
+t.test(ChickWeight$weight[ChickWeight$Diet == 2], ChickWeight$weight[ChickWeight$Diet == 3])
+
+#mean weight is greater for diet 3 than diet 2
+#p value = 0.04856
+#reject null hypothesis
+
+t.test(ChickWeight$weight[ChickWeight$Diet == 3], ChickWeight$weight[ChickWeight$Diet == 4])
+
+#mean weight is not significantly different between diets 3 and 4
+#p value = 0.4486
+#fail to reject null hypothesis
+
+#choose diet 3 or 4 - no significant difference between the two
+```
+
+</div>
+

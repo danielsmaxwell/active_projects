@@ -1,0 +1,96 @@
+---
+title: "Multi-sample Test (ANOVA) (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} Multi-Sample Test (ANOVA)
+
+**Goal:** Compare the mean value of more than 2 independent samples ($\mu_1$, $\mu_2$, ..., $\mu_k$). 
+
+We are interested in which of the following hypotheses is supported by the data.
+
+$$H_1: \mu_1 = \mu_2 = ... = \mu_k$$
+$$H_2: \mu_1 \ne \mu_2 = ... = \mu_k$$
+
+$$H_3: \mu_1 = \mu_2 \ne ... = \mu_k$$
+
+$$H_4: \mu_1 = \mu_2 = ... \ne \mu_k$$
+
+$$H_5: \mu_1 \ne \mu_2 \ne ... \ne \mu_k$$
+
+Now that we are interested in comparing more than two samples, we will use an ANOVA instead of a t.test. In R, we will use the *aov()* function. 
+
+We will use the *ChickWeight* built-in dataset again that we have been using for the last couple of modules. In the last module, we used a series of t-tests to compare the mean weight between chicks on different diet. With an anova we can run one test to see if the mean weight for any one group (diet) is different than any other group. The anova will not tell us which group is different, just that any one group is different. In the next module, we will learn how to tell which is the group that is different.
+
+
+```{r eval = FALSE}
+a <- aov(ChickWeight$weight ~ ChickWeight$Diet)
+summmary(a)
+```
+
+Looking at the output of the anova, we can see that the mean weight for at least one of the groups (diets) is different than at least one of the other groups. We know this because the p-value (6.433e-07) is less than 0.05. This output tables also gives us the F statistic (10.81). 
+
+If we want to see the coefficient values for each of the diets we can use the *coef()* function. This tells us the size of the diet effect. 
+
+```{r eval = FALSE}
+coef(a)
+```
+
+For example, in this situation diet 1 has an average weight of 102.65 grams. The effect of diet 2 is to increase weight by 19.97 grams, for diet 3 it increases weight by 40.30, and for diet 4 we see an increase in weight of 32.62 grams. 
+
+And, we can use the *confint()* function to get the confidence intervals. 
+
+```{r eval = FALSE}
+confint(a)
+```
+Recall that these are the confidence intervals for the intercept is around the mean of diet 1, and the confidence intervals for diets 2-4 is the confidence intervals around the difference in means between the particular diet and diet 1. 
+
+We can also change the confidence intervals if we are interested in another level, such as 99%.
+
+```{r eval = FALSE}
+confint(a, leve = 0.99)
+```
+
+
+#\textcolor{blue}{1.2} Problem Set
+
+1. Let's explore the *iris* dataset (R built-in dataset). This dataset gives us the measurements of sepal length and width and petal length and width for 50 flowers of 3 species of iris. First, create a boxplot of petal length for the 3 iris species.
+
+2. Is there a difference in mean petal length between the 3 iris species? Use an anova to answer this question. 
+
+3. What are the coefficient for each species and the 95% confidence intervals? Which species has the largest mean petal length?
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+boxplot(iris$Petal.Length ~ iris$Species, main = "Petal Length by Iris Species", xlab = "Species", ylab = "Petal Length")
+
+a <- aov(iris$Petal.Length ~ iris$Species)
+#yes, p-value is <2e-16
+coef(a)
+#setosa - 1.462 mean petal length
+#versicolor +2.798 mean petal length from setosa
+#virginica +4.090 mean petal length from setosa
+#virginica has the largest mean petal length
+confint(a)
+#setosa (1.34, 1.58)
+#versicolor (2.63, 2.97) difference between versicolor and setosa
+#virginica (3.92, 4.26) difference between virginica and setosa
+```
+
+</div>
+
