@@ -1,2 +1,2 @@
 
-All episodes were developed by Jennifer Moore.
+All episodes developed by Jennifer Moore.

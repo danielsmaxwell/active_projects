@@ -1,2 +1,2 @@
 
-This folder contains images for a proposed Introduction to Data Science course at the University of Florida.
+This folder contains images for an Introduction to Data Storytelling class at the University of Florida.
