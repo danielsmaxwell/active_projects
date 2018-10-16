@@ -1,0 +1,117 @@
+---
+title: "Regression (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+
+
+#\textcolor{blue}{1.1} Regression Line or Best Fit Line
+
+We will run a linear model, or linear regression, to model the relationship between the dependent and independent variables of interest. Using the *iris* dataset from the last module, we are interested in whether or not we can use the petal length to estimate the petal width for an iris. 
+
+We know that the equation for a line is:
+$$Y = bX + a$$  
+
+In our situation, Y is the petal width, or the independent variable, and X is petal length or the dependent variable. *b* is the slope of the line and *a* is the intercept.
+
+In R, we will create a linear model, and then look at the summary of the model output, which will give us the equation for the line. We can then plot the best fit line, or regression line on our scatterplot.
+
+We will use the *lm()* function to create our linear model, and then the *summary()* function to look at the results. We will then use the *abline()* function to plot the best fit line.
+
+
+```{r eval = FALSE}
+m <- lm(Petal.Width ~ Petal.Length, data = iris)
+summary(m)
+```
+Looking at the results, we can see that the intercept, *a*, is -0.363, and the slope, *b*, is 0.416. Therefore our equation is:
+$$Y = 0.416X - 0.363$$
+
+Now, let's create our scatterplot, and then add this line to our plot.
+
+```{r eval = FALSE}
+plot(iris$Petal.Length, iris$Petal.Width, xlab = "Petal Length", ylab = "Petal Width")
+abline(m)
+```
+You can see that the *abline()* function adds the best fit line to the scatterplot. 
+
+#\textcolor{blue}{1.2} Prediction
+Now, that we have a linear model with the relationship between petal length and petal width, we can use the equation to predict petal width given set values of petal length.
+
+For example, if we have a petal length value of 1 cm, using the prediction equation, what will the petal width be?
+Recall that m is the name of the linear model that you created above.
+
+```{r eval = FALSE}
+new.data <- data.frame(Petal.Length = 1)
+predict(m, newdata = new.data)
+```
+So if we have a petal length of 1 cm, we predict that the petal widtch will be 0.05 cm. 
+
+If we are interested in a group of values for petal length, we can use the same function to estimate petal with for multiple values.
+```{r eval = FALSE}
+new.data <- data.frame(Petal.Length = c(1,2,3,4,5))
+predict(m, newdata = new.data)
+```
+The results now show us petal width for iris' with a petal length of 1, 2, 3, 4, or 5 cm. 
+
+#\textcolor{blue}{1.3} Standard Error of Prediction
+Once, we know the correlation between two variables (as we learned in the last module), it is easy to use the following formula to calculate the standard error of prediction.
+
+$$s_{YX} = s_Y*sqrt(1-r^2_{XY})$$
+$s_{YX}$ is the standard error of prediction
+$s_Y$ is the standard deviation of variable Y (independent variable)
+$r^2_{XY}$ is the correlation between the variables X and Y
+
+```{r eval = FALSE}
+cor <- cor.test(iris$Petal.Length, iris$Petal.Width)
+cor_value <- cor$estimate
+s_y <- sd(iris$Petal.Width)
+s_yx <- s_y*sqrt(1-(cor_value^2))
+```
+We have a standard error of prediction of 0.206.
+
+
+#\textcolor{blue}{1.5} Problem Set
+
+1. Using the *trees* built-in dataset from the last module, we explored the correlation between black cherry tree height and volume. Let's us now create a linear model and add the best fit line to a scatterplot of these data.
+
+2. Predict the volume of a black cherry tree given a tree height of 60, 70, 80, and 90 feet. 
+
+3. What is the standard error of prediction for the model you created in question 1?
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+m <- lm(Volume ~ Height, data = trees)
+plot(trees$Height, trees$Volume, xlab = "Tree Height", ylab = "Tree Volume", main = "Black Cherry Trees")
+abline(m)
+
+new.data <- data.frame(Height = c(60,70,80,90))
+predict(m, newdata = new.data)
+#trees of height 60 ft = volume 5.477
+#trees of height 70 ft = volume 20.911
+#trees of height 80 ft = volume 36.344
+#trees of height 90 ft = volume 51.778
+
+cor <- cor.test(trees$Height, trees$Volume)
+cor_value <- cor$estimate
+s_y <- sd(trees$Volume)
+s_yx <- s_y*sqrt(1-(cor_value^2))
+#standard error of prediction 13.1718
+```
+
+</div>
+
