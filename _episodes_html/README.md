@@ -16,3 +16,5 @@
 13. [Power](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/power.html)
 14. [Correlation](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/correlation.html)
 15. [Regression](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/regression.html)
+
+[![Regression](../fig/regression.jpg)](https://github.com/mydatastory/r_intro_class/blob/master/_episodes_html/module_1_main.md)
