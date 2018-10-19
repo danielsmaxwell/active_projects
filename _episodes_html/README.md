@@ -13,7 +13,7 @@
 10. [Anova](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/anova.html)
 11. [Post-Hoc Tests](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/posthoc_tests.html)
 12. [Non-Parametric Tests](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/nonparametric_tests.html)
-13. [Power](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/power.html)
 
+[![Power](../fig/EffectSizeandPower.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/power.html)
 [![Correlation](../fig/Correlation.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/correlation.html)
 [![Regression](../fig/Regression.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/regression.html)
