@@ -15,4 +15,6 @@
 12. [Non-Parametric Tests](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/nonparametric_tests.html)
 13. [Power](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/power.html)
 14. [Correlation](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/correlation.html)
+
+
 [![Regression](../fig/Regression.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/regression.html)
