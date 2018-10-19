@@ -128,6 +128,7 @@ $(document).ready(function () {
 <div id="colorbluetext1.1-measures-of-effect-size" class="section level1">
 <h1><span class="math inline">\(\color{blue}{\text1.1}\)</span> Measures of Effect Size</h1>
 <p>We will go through and calculate the effect size using the various methods for the different statistical tests we have learned about in the last couple of modules. We will use the same datasets that we used in previous modules so that we can examine the effect size for the tests that we previously ran and see how that influences our conclusions.</p>
+<p>We will calculate each effect size using two different methods. First, directly using the equation from the textbook, and second using a function in the <em>pwr</em> package. Remember that in order to use the <em>pwr</em> package we first have to install the package and then load it using the <em>library(pwr)</em> command.</p>
 <div id="colorbluetext1.1a-two-sample-t-test" class="section level3">
 <h3><span class="math inline">\(\color{blue}{\text1.1a}\)</span> Two Sample T-test</h3>
 <p>For the two sample t-test in module 12, we were interested in the mean weight of chicks that were given diet 1 versus diet 2, from the <em>ChickWeight</em> dataset. We concluded that the mean weight was significantly different for the chicks on diet 1 vs. diet 2. In fact, we figured out that the mean weight for diet 2 was significantly higher than for diet 1.</p>
@@ -185,6 +186,8 @@ chistat &lt;- chi$statistic
 
 r &lt;- sqrt(chistat/(N*(c-1)))</code></pre>
 <p>Our results give us an effect size <span class="math inline">\(r\)</span> value of 0.021. Using the guidelines from the textbook, we conclude that this is a small effect.</p>
+<p>Using the <em>pwr</em> package, we will use the <em>ES.w1()</em> function. This function requires two parameters, the probabilities for your data, and the probabilities for the expected distribution.</p>
+<pre class="r"><code>ES.w1(c(705/929,224/929), c(0.75,0.25))</code></pre>
 </div>
 <div id="test-for-independence-two-variable" class="section level4">
 <h4>Test for Independence (two-variable)</h4>
@@ -212,6 +215,19 @@ phi2 &lt;- phi^2
 V &lt;- sqrt(phi2/(3-1))</code></pre>
 <p>Our results give us an effect size <span class="math inline">\(V\)</span> value of 0.0564. Using the guidelines from the textbook, we conclude that this is a small effect.</p>
 </div>
+</div>
+</div>
+<div id="colorbluetext1.2-power" class="section level1">
+<h1><span class="math inline">\(\color{blue}{\text1.2}\)</span> Power</h1>
+<p>Once we have the effect size statistic, we can calculate power. Recall that power is we correctly reject the null hypothesis that is in fact false. Ideally a power &gt; 80% is desired.</p>
+<div id="power-for-2-sample-t-test-with-unequal-sample-size" class="section level4">
+<h4>Power for 2-sample t-test with unequal sample size</h4>
+<p>We will use the function <em>pwr.t2n.test()</em> to calculate power. We will use the sample size, and Cohen’s effect size (<em>d</em>) from above to calculate power. We will use a significance level of 5% (type 1 error probability).</p>
+<pre class="r"><code>pwr.t2n.test(n1=220,n2=120,d=d,sig.level=0.05,alternative=&quot;two.sided&quot;)</code></pre>
+<p>We have a power value of 0.80 or 80%.</p>
+<p>We can also calculate a power value for the chi-squared test (goodness of fit test), with effect size <em>r</em>.</p>
+<pre class="r"><code>pwr.chisq.test(w=r,N=2,df=1,sig.level=0.05,power=NULL)</code></pre>
+<p>For this test, our power is 0.05 or 5%.</p>
 </div>
 </div>
 
