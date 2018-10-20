@@ -5,8 +5,8 @@
 2. [Data Management](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/data_management.html)
 3. [Creating Graphs](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/creating_graphs.html)
 4. [Central Tendency](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/central_tendency.html)
-5. [Dispersion](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 
+[![Dispersion](../fig/Variance.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 [![Standard Scores](../fig/StandardScores.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/standard_scores.html)
 [![Probability](../fig/Probability.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/probability.html)
 [![One Sample TTest](../fig/OneSampleTestTTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
