@@ -4,7 +4,7 @@
 1. [Getting Started](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/getting_started.html)
 
 [![Data Wrangling](../fig/BasicDataWranglingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/data_management.html)
-[![Creating Graphs](../fig/BasicGraphingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/central_tendency.html)
+[![Creating Graphs](../fig/BasicGraphingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/creating_graphs.html)
 [![Central Tendency](../fig/CentralTendency.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/central_tendency.html)
 [![Dispersion](../fig/Variance.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 [![Standard Scores](../fig/StandardScores.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/standard_scores.html)
