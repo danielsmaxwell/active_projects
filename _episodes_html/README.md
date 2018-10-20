@@ -1,5 +1,5 @@
 
-## Introduction to Data Science (Episode Order)
+## Introduction to Data Storytelling
 
 1. [Getting Started](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/getting_started.html)
 2. [Data Management](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/data_management.html)
@@ -7,8 +7,8 @@
 4. [Central Tendency](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/central_tendency.html)
 5. [Dispersion](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 6. [Standard Scores](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/standard_scores.html)
-7. [Probability](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/probability.html)
 
+[![Probability](../fig/Probability.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/probability.html)
 [![One Sample TTest](../fig/OneSampleTestTTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
 [![Two Sample TTest](../fig/TwoSampleTestTTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/two_sample_ttest.html)
 [![ANOVA](../fig/MultisampleTestANOVA.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/anova.html)
