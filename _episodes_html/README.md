@@ -8,8 +8,8 @@
 5. [Dispersion](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
 6. [Standard Scores](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/standard_scores.html)
 7. [Probability](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/probability.html)
-8. [One Sample TTest](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
 
+[![One Sample TTest](../fig/OneSampleTestTTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
 [![Two Sample TTest](../fig/TwoSampleTestTTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/two_sample_ttest.html)
 [![ANOVA](../fig/MultisampleTestANOVA.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/anova.html)
 [![Post-Hoc Tests](../fig/PostHocTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/posthoc_tests.html)
