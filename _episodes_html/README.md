@@ -11,8 +11,8 @@
 8. [One Sample TTest](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/one_sample_ttest.html)
 9. [Two Sample TTest](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/two_sample_ttest.html)
 10. [Anova](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/anova.html)
-11. [Post-Hoc Tests](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/posthoc_tests.html)
 
+[![Post-Hoc Tests](../fig/PostHocTest.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/posthoc_tests.html)
 [![Non-Parametric Tests](../fig/NonParametricStatisticsChiSquare.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/nonparametric_tests.html)
 [![Power](../fig/EffectSizeandPower.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/power.html)
 [![Correlation](../fig/Correlation.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/correlation.html)
