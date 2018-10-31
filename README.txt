@@ -1,4 +1,6 @@
-This repository contains assets and documents for active data science projects.
+This repository contains resources for the Introduction to Data Science class.
+
+Course Designation: HSC4930
 
 Technologies to investigate for this class:
     rstudio.cloud
