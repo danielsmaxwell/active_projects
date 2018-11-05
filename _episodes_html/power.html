@@ -125,12 +125,12 @@ $(document).ready(function () {
 </div>
 
 
-<div id="colorbluetext1.1-measures-of-effect-size" class="section level1">
-<h1><span class="math inline">\(\color{blue}{\text1.1}\)</span> Measures of Effect Size</h1>
+<div id="measures-of-effect-size" class="section level1">
+<h1> Measures of Effect Size</h1>
 <p>We will go through and calculate the effect size using the various methods for the different statistical tests we have learned about in the last couple of modules. We will use the same datasets that we used in previous modules so that we can examine the effect size for the tests that we previously ran and see how that influences our conclusions.</p>
 <p>We will calculate each effect size using two different methods. First, directly using the equation from the textbook, and second using a function in the <em>pwr</em> package. Remember that in order to use the <em>pwr</em> package we first have to install the package and then load it using the <em>library(pwr)</em> command.</p>
-<div id="colorbluetext1.1a-two-sample-t-test" class="section level3">
-<h3><span class="math inline">\(\color{blue}{\text1.1a}\)</span> Two Sample T-test</h3>
+<div id="two-sample-t-test" class="section level3">
+<h3> Two Sample T-test</h3>
 <p>For the two sample t-test in module 12, we were interested in the mean weight of chicks that were given diet 1 versus diet 2, from the <em>ChickWeight</em> dataset. We concluded that the mean weight was significantly different for the chicks on diet 1 vs. diet 2. In fact, we figured out that the mean weight for diet 2 was significantly higher than for diet 1.</p>
 <p>So now, we are interested in the effect size for this difference. Is the effect size large enough that it would be worth it for someone to change their chicks diet?</p>
 <div id="cohens-d" class="section level4">
@@ -155,8 +155,8 @@ r &lt;- sqrt(t^2/(t^2 + df))</code></pre>
 <p>Our results give us an effect size <em>r</em> value of -0.183. Using the guidelines from the textbook, we conclude, again, that this is a small effect.</p>
 </div>
 </div>
-<div id="colorbluetext1.1b-anova-f-tests" class="section level3">
-<h3><span class="math inline">\(\color{blue}{\text1.1b}\)</span> ANOVA <em>F</em> Tests</h3>
+<div id="anova-f-tests" class="section level3">
+<h3> ANOVA <em>F</em> Tests</h3>
 <p>For the ANOVA analysis in module 13, we were again interested in the mean weight of chicks that were given various diets, from the <em>ChickWeight</em> dataset. We concluded that there was a significant difference in mean weight between at least two of the different diets.</p>
 <p>Again, we are interested in the effect size for this difference. Is the effect size large enough that it would be worth it for someone to change their chicks diet?</p>
 <div id="effect-size-eta" class="section level4">
@@ -171,8 +171,8 @@ eta &lt;- sqrt(SS_bet/SS_tot)</code></pre>
 <p>Our results give us an effect size <span class="math inline">\(\eta\)</span> value of 0.231. Using the guidelines from the textbook, we conclude that this is a small effect.</p>
 </div>
 </div>
-<div id="colorbluetext1.1c-chi-square-tests" class="section level3">
-<h3><span class="math inline">\(\color{blue}{\text1.1c}\)</span> Chi-square Tests</h3>
+<div id="chi-square-tests" class="section level3">
+<h3> Chi-square Tests</h3>
 <p>For the Chi-square Tests in module 15, we used our own flower data to (1) see if our data follows the expected distribution and (2) test for independence between two or more variables.</p>
 <p>We are interested in the effect size for our chi-square statistic - is the difference meaningful in practical terms? We use a different statistic depending on the number of variables of interest.</p>
 <div id="goodness-of-fit-test-one-variable" class="section level4">
@@ -217,8 +217,8 @@ V &lt;- sqrt(phi2/(3-1))</code></pre>
 </div>
 </div>
 </div>
-<div id="colorbluetext1.2-power" class="section level1">
-<h1><span class="math inline">\(\color{blue}{\text1.2}\)</span> Power</h1>
+<div id="power" class="section level1">
+<h1> Power</h1>
 <p>Once we have the effect size statistic, we can calculate power. Recall that power is we correctly reject the null hypothesis that is in fact false. Ideally a power &gt; 80% is desired.</p>
 <div id="power-for-2-sample-t-test-with-unequal-sample-size" class="section level4">
 <h4>Power for 2-sample t-test with unequal sample size</h4>

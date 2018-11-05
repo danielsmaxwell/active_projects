@@ -9,14 +9,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#$\color{blue}{\text1.1}$ Measures of Effect Size
+#\textcolor{blue}{1.1} Measures of Effect Size
 
 We will go through and calculate the effect size using the various methods for the different statistical tests we have learned about in the last couple of modules. We will use the same datasets that we used in previous modules so that we can examine the effect size for the tests that we previously ran and see how that influences our conclusions.
 
 We will calculate each effect size using two different methods. First, directly using the equation from the textbook, and second using a function in the *pwr* package. Remember that in order to use the *pwr* package we first have to install the package and then load it using the *library(pwr)* command. 
 
 
-###$\color{blue}{\text1.1a}$ Two Sample T-test
+###\textcolor{blue}{1.1a} Two Sample T-test
 
 For the two sample t-test in module 12, we were interested in the mean weight of chicks that were given diet 1 versus diet 2, from the *ChickWeight* dataset. We concluded that the mean weight was significantly different for the chicks on diet 1 vs. diet 2. In fact, we figured out that the mean weight for diet 2 was significantly higher than for diet 1. 
 
@@ -56,7 +56,7 @@ r <- sqrt(t^2/(t^2 + df))
 Our results give us an effect size *r* value of -0.183. Using the guidelines from the textbook, we conclude, again, that this is a small effect. 
 
 
-###$\color{blue}{\text1.1b}$ ANOVA *F* Tests
+###\textcolor{blue}{1.1b} ANOVA *F* Tests
 
 For the ANOVA analysis in module 13, we were again interested in the mean weight of chicks that were given various diets, from the *ChickWeight* dataset. We concluded that there was a significant difference in mean weight between at least two of the different diets.
 
@@ -79,7 +79,7 @@ eta <- sqrt(SS_bet/SS_tot)
 Our results give us an effect size $\eta$ value of 0.231. Using the guidelines from the textbook, we conclude that this is a small effect.
 
 
-###$\color{blue}{\text1.1c}$ Chi-square Tests
+###\textcolor{blue}{1.1c} Chi-square Tests
 For the Chi-square Tests in module 15, we used our own flower data to (1) see if our data follows the expected distribution and (2) test for independence between two or more variables.
 
 We are interested in the effect size for our chi-square statistic - is the difference meaningful in practical terms?
@@ -160,7 +160,7 @@ V <- sqrt(phi2/(3-1))
 Our results give us an effect size $V$ value of 0.0564. Using the guidelines from the textbook, we conclude that this is a small effect.
 
 
-#$\color{blue}{\text1.2}$ Power
+#\textcolor{blue}{1.2} Power
 
 Once we have the effect size statistic, we can calculate power. Recall that power is we correctly reject the null hypothesis that is in fact false. Ideally a power > 80% is desired.
 
