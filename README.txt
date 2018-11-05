@@ -1,4 +1,4 @@
-This repository contains resources for the Introduction to Data Science class.
+This repository contains resources for the Introduction to Data Storytelling class (R).
 
 Course Designation: HSC4930
 
