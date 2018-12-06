@@ -1,0 +1,2 @@
+
+This folder contains the worksheets for the public health variant of the *Introduction to Data Storytelling* class.  All worksheets created by J. Moore.
