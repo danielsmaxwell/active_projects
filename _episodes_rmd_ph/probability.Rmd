@@ -1,0 +1,59 @@
+---
+title: "Probability (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#\textcolor{blue}{1.1} Sampling in R
+
+In R, we can sample from a set with or without replacement with equal or unequal probabilties.
+
+For example, suppose we roll a dice - the possible outcome for one roll is a number between 1 and 6. 
+First, let's create a vector of the numbers 1 through 6.
+```{r eval = FALSE}
+x <- c(1:6)
+```
+Next, let's choose 5 numbers without replacement using the *sample()* command. In this command, we need to have a set of available outcomes, the number of samples to choose, and then we need to designate whether to sample with or without replacement.
+```{r eval = FALSE}
+sample(x, 5, replace = FALSE)
+```
+
+Now, let's again choose 5 numbers but now with replacement.
+```{r eval = FALSE}
+sample(x, 5, replace = TRUE)
+```
+
+>###Note: When sampling without replacement, each number in the outcome set can only be choosen once, but when sampling with replacement each number can be choosen multiple times.
+
+In the above examples, we are using equal probability, so each outcome in the set is equally likely to be choosen. Let's now change the probability so 1 has a 50% chance of being chosen. Sample 10 numbers.
+```{r eval = FALSE}
+sample(x,10,replace = TRUE, prob = c(1/2,1/10,1/10,1/10,1/10,1/10))
+```
+>###Note: Because we are only choosing 10 numbers (small sample size), we will not necessarily get 5 1's and 1 of each of the other numbers 2-6. However, as sample size increases you will get closer and closer to these given probabilities. 
+
+
+#\textcolor{blue}{1.2} Binomial Distribution
+
+Like in the previous module, we can generate random numbers from the binomial distribution in R. Remember, in the binomial distribution there are 2 possible outcomes, such as heads or tails when flipping a coin.
+
+We can use the *rbinom()* command. We need to decide the number of observations, the number of trails, and the probability of success on each trial.
+
+For example, I want 5 observations based on 10 trails with a probability of success of 0.5
+
+```{r eval = FALSE}
+rbinom(5,10,prob = 0.5)
+```
+
+You'll notice that there are 5 numbers in the results. Each of these is the number of successes out of 10 trials. 
+
+>###Note: If you increase the number of trials and/or the number of observations, you'll get closer and closer to the given probability. 
+
+
+
+
+
