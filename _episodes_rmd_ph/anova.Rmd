@@ -1,0 +1,87 @@
+---
+title: "Multi-sample Test (ANOVA) (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+#\textcolor{blue}{1.1} Multi-Sample Test (ANOVA)
+
+**Goal:** Compare the mean value of more than 2 independent samples ($\mu_1$, $\mu_2$, ..., $\mu_k$). 
+
+We are interested in which of the following hypotheses is supported by the data.
+
+$$H_1: \mu_1 = \mu_2 = ... = \mu_k$$
+$$H_2: \mu_1 \ne \mu_2 = ... = \mu_k$$
+
+$$H_3: \mu_1 = \mu_2 \ne ... = \mu_k$$
+
+$$H_4: \mu_1 = \mu_2 = ... \ne \mu_k$$
+
+$$H_5: \mu_1 \ne \mu_2 \ne ... \ne \mu_k$$
+
+Now that we are interested in comparing more than two samples, we will use an ANOVA instead of a t.test. In R, we will use the *aov()* function. 
+
+We will use the *anorexia* built-in dataset again that we have been using for the last couple of modules - remember it is in the *MASS* package. In the last module, we used a series of t-tests to compare the mean weight post study between patients who were given different treatments. With an anova we can run one test to see if the mean weight post study for any one group is different than any other group. The anova will not tell us which group is different, just that any one group is different. In the next module, we will learn how to tell which is the group that is different.
+
+
+```{r eval = FALSE}
+a <- aov(anorexia$Postwt ~ anorexia$Treat)
+summary(a)
+```
+
+Looking at the output of the anova, we can see that the mean weight post study for at least one of the groups (treatments) is different than at least one of the other groups. We know this because the p-value (0.000444) is less than 0.05. This output tables also gives us the F statistic (8.651). 
+
+If we want to see the coefficient values for each of the treatments we can use the *coef()* function. This tells us the size of the treatment effect. 
+
+```{r eval = FALSE}
+coef(a)
+```
+
+For example, in this situation treatment 1 (cognitive behavioral treatment) has an average weight post study of 85.7 pounds. The effect of treatment 2 (control) is to decrease weight by 4.6 pounds, for treatment 3 (family treatment) it increases weight by 4.8 pounds. The cognitive behavioral treatment is the intercept because it is first alphabetically of the three treatments (CBT, Cont, FT).
+
+And, we can use the *confint()* function to get the confidence intervals. 
+
+```{r eval = FALSE}
+confint(a)
+```
+Recall that the confidence intervals for the intercept are around the mean weight for treatment 1 (CBT), and the confidence intervals for treatments 2-3 are the confidence intervals around the difference in means between the particular treatment and treatment 1. 
+
+We can also change the confidence intervals if we are interested in another level, such as 99%.
+
+```{r eval = FALSE}
+confint(a, leve = 0.99)
+```
+
+
+#\textcolor{blue}{1.2} Problem Set
+
+1. Let's explore the *esoph* dataset (R built-in dataset). This dataset gives us number of cases of esophageal cancer based on different age groups, amount of alcohol consumption, and amount of tobacco consumption. First, create a boxplot of the number of cases/number of controls for each amount of alcohol consumption. Because the number of controls differs between each groups, instead of just using the number of cases, we are interested in the number of cases controlled for the number of controls. (ncases/ncontrols)
+
+2. Is there a difference in (ncases/ncontrola) between the groups who consumed different amount of alcohol? Use an anova to answer this question. 
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+boxplot((esoph$ncases/esoph$ncontrols) ~ esoph$alcgp, main = "Proportion of Cancer Cases based on Alcohol Consumption", xlab = "Alcohol Consumption", ylab = "Proportion of Cancer Cases")
+
+a <- aov((esoph$ncases/esoph$ncontrols) ~ esoph$alcgp)
+summary(a)
+#yes, p-value is 6.91e-07
+
+```
+
+</div>
+
