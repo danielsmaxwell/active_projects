@@ -1,0 +1,116 @@
+---
+title: "Regression (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+
+
+#\textcolor{blue}{1.1} Regression Line or Best Fit Line
+
+We will run a linear model, or linear regression, to model the relationship between the dependent and independent variables of interest. Using the *women* dataset from the last module, we are interested in whether or not we can use the women's weight to estimate the womens' height. 
+
+We know that the equation for a line is:
+$$Y = bX + a$$  
+
+In our situation, Y is the height, or the independent variable, and X is weight or the dependent variable. *b* is the slope of the line and *a* is the intercept.
+
+In R, we will create a linear model, and then look at the summary of the model output, which will give us the equation for the line. We can then plot the best fit line, or regression line on our scatterplot.
+
+We will use the *lm()* function to create our linear model, and then the *summary()* function to look at the results. We will then use the *abline()* function to plot the best fit line.
+
+
+```{r eval = FALSE}
+m <- lm(height ~ weight, data = women)
+summary(m)
+```
+Looking at the results, we can see that the intercept, *a*, is 25.723, and the slope, *b*, is 0.287. Therefore our equation is:
+$$Y = 0.287X - 25.723$$
+
+Now, let's create our scatterplot, and then add this line to our plot.
+
+```{r eval = FALSE}
+plot(women$weight, women$height, xlab = "Weight", ylab = "Height")
+abline(m)
+```
+You can see that the *abline()* function adds the best fit line to the scatterplot. 
+
+#\textcolor{blue}{1.2} Prediction
+Now, that we have a linear model with the relationship between height and weight, we can use the equation to predict height given set values of weight.
+
+For example, if we have a height value of 167 lbs, using the prediction equation, what will the weight be?
+Recall that m is the name of the linear model that you created above.
+
+```{r eval = FALSE}
+new.data <- data.frame(weight = 167)
+predict(m, newdata = new.data)
+```
+So if we have a weight of 167 lbs, we predict that the height will be 73.69 in. 
+
+If we are interested in a group of values for we, we can weight, we can use the same function to estimate height for multiple values.
+```{r eval = FALSE}
+new.data <- data.frame(weight = c(110,111,112,113,114))
+predict(m, newdata = new.data)
+```
+The results now show us height for women with a weight of 110-114 lbs.
+
+#\textcolor{blue}{1.3} Standard Error of Prediction
+Once, we know the correlation between two variables (as we learned in the last module), it is easy to use the following formula to calculate the standard error of prediction.
+
+$$s_{YX} = s_Y*sqrt(1-r^2_{XY})$$
+$s_{YX}$ is the standard error of prediction
+$s_Y$ is the standard deviation of variable Y (independent variable)
+$r^2_{XY}$ is the correlation between the variables X and Y
+
+```{r eval = FALSE}
+cor <- cor.test(women$height, women$weight)
+cor_value <- cor$estimate
+s_y <- sd(women$height)
+s_yx <- s_y*sqrt(1-(cor_value^2))
+```
+We have a standard error of prediction of 0.424.
+
+
+#\textcolor{blue}{1.5} Problem Set
+
+1. Using the *leuk* built-in dataset (in package *MASS*) from the last module, we explored the correlation between white blood count and survival time. Let's us now create a linear model and add the best fit line to a scatterplot of these data.
+
+2. Predict the survival time of a patient given a white blood count of 1000, 10000, and 100000. 
+
+3. What is the standard error of prediction for the model you created in question 1?
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+m <- lm(time ~ wbc, data = leuk)
+plot(leuk$wbc, leuk$time, xlab = "White Blood Count", ylab = "Survival Time", main = "Leukemia Patients")
+abline(m)
+
+new.data <- data.frame(wbc = c(1000, 10000, 100000))
+predict(m, newdata = new.data)
+#wbc 1000 = survival time 53 weeks
+#wbc 10000 = survival time 49 weeks
+#wbc 100000 = survival time 9 weeks
+
+cor <- cor.test(leuk$wbc, leuk$time)
+cor_value <- cor$estimate
+s_y <- sd(leuk$time)
+s_yx <- s_y*sqrt(1-(cor_value^2))
+#standard error of prediction 44.096
+```
+
+</div>
+
