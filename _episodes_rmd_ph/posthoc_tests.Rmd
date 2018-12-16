@@ -1,0 +1,102 @@
+---
+title: "Post-hoc Tests (Instructional Worksheet)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<script src="hideOutput.js"></script>
+
+<link rel="stylesheet" type="text/css" href="fold.css">
+
+Based on our ANOVA analyses from the last module, we know that there is a difference between the proportion of cases for each group that had different alcohol consumptions from the *esoph* built-in dataset. Now that we know there is a difference, how do we identify the differences between specific pairs (i.e., which groups are different from one another)? We could figure this out by running a series of pair-wise t-tests like we did in previous modules - however, the better route is to instead use a multiple comparison method, which controls for overall type I error, which you read about in your textbook.
+
+We will go through how to run two different multiple comparison methods in R, Tukey HSD and Scheffe's Test.
+
+#\textcolor{blue}{1.1} Tukey HSD
+
+The Tukey HSD, or Tukey Honest Significant Differences Method, runs a series of pairwise t-tests, but then adjuts the p-values to control overall type I error. In R, we will use the *TukeyHDS()* function.
+
+```{r eval = FALSE}
+a <- aov((esoph$ncases/esoph$ncontrols) ~ esoph$alcgp)
+TukeyHSD(a)
+```
+
+From the output, we can see the pair-wise comparisons between the different alcohol consumption levels. For each pair, we are given the difference (diff) between the means of the pair, the lower (lwr) and upper (upr) confidence interval around the difference in means, and the p-value adjusted to control for type I error. 
+
+In this situation, the p-value for 4 of the pairs is significant (p<0.05), therefore these pairs are significantly different. The other 2 pairs are not significantly different. 
+
+
+If we want our results using a 99% confidence level we can add the *conf.level* argument.
+
+```{r eval = FALSE}
+a <- aov((esoph$ncases/esoph$ncontrols) ~ esoph$alcgp)
+TukeyHSD(a, conf.level = 0.99)
+```
+
+You'll notice that the difference and the p-values do not change, but the confidence intervals are now 99% confidence intervals instead of 95%.
+
+
+#\textcolor{blue}{1.2} Scheffe Test
+
+We will now run the same analysis but will instead use a Scheffe's Test.
+The function *ScheffeTest()* is found within the package *DescTools*.
+
+If you remember, there are many packages available in R. Though there are a lot of things we can do that are built into R, many more specialized or advanced functions are instead included in a package. To use a package, we must first install it. Once it is installed on your computer we can just reopen it each time using the *library()* function. The easiest way to install a package is to use the packages tab in the lower right side of RStudio. At the top of this tab hit the install button. Here type in the name of the package *DescTools* and then hit the install button - it might take a few seconds to install. After the package is installed use the library() function to activate the package
+
+```{r eval = FALSE}
+library(DescTools)
+```
+
+Now that the package is installed and activated, we can run the Scheffe's Test.
+
+```{r eval = FALSE}
+a <- aov((esoph$ncases/esoph$ncontrols) ~ esoph$alcgp)
+ScheffeTest(a)
+```
+In the output, we again have the difference in means between each pair of species. In addition, we have the upper and lower bounds for the confidence interval, and then the p-value adjusted for multiple comparisons. 
+
+Again, we can change to 99% confidence intervals instead of 95% using the *conf.level* argument.
+
+```{r eval = FALSE}
+ScheffeTest(a, conf.level = 0.99)
+```
+
+#\textcolor{blue}{1.3} Problem Set
+
+1. We will now use the *anorexia* built-in dataset that we used in the last module. This dataset gives us the weight post study of patients who were given 1 of 3 treatments: control, cognitive behavioral treatment, family treatment. First, let's create a boxplot of the weight for each group to see if there are any obvious differences in mean weight between groups.
+
+2. Use an anova to check and see if there is a significant difference between mean weight for any of the groups. 
+
+3. Run a TukeyHSD post-hoc test to find out the difference for each pair-wise comparison. Are any of the groups significantly different?
+
+4. Run a Scheffe's Test. What are the 99% confidence intervals?
+
+
+After you have completed the problem set, click the Code button to see the solution.
+
+
+<div class="fold s">
+
+```{r eval = FALSE}
+boxplot(anorexia$Postwt ~ anorexia$Treat, main = "Weight Post Study by Treatment", xlab = "Treatment", ylab = "Weight")
+
+a <- aov(anorexia$Postwt ~ anorexia$Treat)
+summary(a)
+#yes, p-value is 0.000444
+
+TukeyHSD(a)
+#different between treatment FT and Cont but not between the other pairs
+
+ScheffeTest(a, conf.level = 0.99)
+#cont-CBT (-10.77, 1.59)
+#FT-CBT (-2.19, 11.79)
+#FT-Cont (2.25, 16.52)
+```
+
+</div>
+
