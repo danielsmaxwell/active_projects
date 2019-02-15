@@ -15,4 +15,4 @@
 [![Non-Parametric Tests](../fig/NonParametricStatisticsChiSquare.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/r_dstory_intro_class/blob/master/_episodes_html/nonparametric_tests.html)
 [![Power](../fig/EffectSizeandPower.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/r_dstory_intro_class/blob/master/_episodes_html/power.html)
 [![Correlation](../fig/Correlation.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/r_dstory_intro_class/blob/master/_episodes_html/correlation.html)
-[![Regression](../fig/Regression.jpg)](https://rawcdn.githack.com/mydatastory/rdstory_intro_class/master/_episodes_html/regression.html)
+[![Regression](../fig/Regression.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/master/_episodes_html/regression.html)
