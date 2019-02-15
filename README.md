@@ -1,4 +1,4 @@
-## Introduction to Data Storytelling in R
+## Introduction to Data Storytelling (R)
 The episodes in this course were developed by Jennifer Moore, now at Rice University.
 
 ## Notes
