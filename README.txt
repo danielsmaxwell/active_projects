@@ -1,6 +1,7 @@
 This repository contains resources for the Introduction to Data Storytelling class (R).
 
-Course Designation: HSC4930
+## Notes
+- All .html files are rendered using [raw githack](https://raw.githack.com) because htmlpreview.github stopped working properly.
 
 Technologies to investigate for this class:
     rstudio.cloud
