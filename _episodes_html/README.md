@@ -1,8 +1,8 @@
 
 ## Introduction to Data Storytelling
 
-[![RStudio IDE](../fig/TheRStudioIDE.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/getting_started.html)
-[![Data Wrangling](../fig/BasicDataWranglingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/data_management.html)
+[![RStudio IDE](../fig/TheRStudioIDE.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/r_dstory_intro_class/blob/master/_episodes_html/getting_started.html)
+[![Data Wrangling](../fig/BasicDataWranglingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/r_dstory_intro_class/blob/master/_episodes_html/data_management.html)
 [![Creating Graphs](../fig/BasicGraphingInR.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/creating_graphs.html)
 [![Central Tendency](../fig/CentralTendency.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/central_tendency.html)
 [![Dispersion](../fig/Variance.jpg)](http://htmlpreview.github.com/?https://github.com/mydatastory/dsci_class/blob/master/_episodes_html/dispersion.html)
