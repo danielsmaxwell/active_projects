@@ -10,7 +10,7 @@
 [![Probability](../fig/Probability.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/probability.html)
 [![One Sample TTest](../fig/OneSampleTestTTest.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/two_sample_ttest.html)
 [![Two Sample TTest](../fig/TwoSampleTestTTest.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/two_sample_ttest.html)
-[![ANOVA](../fig/MultisampleTestANOVA.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/anova.html)
+[![ANOVA](../fig/MultisampleTestANOVA.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/cebace40464957fdddc6d4b5d91ae62299f676b8/_episodes_html/anova.html)
 [![Post-Hoc Tests](../fig/PostHocTest.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/c78efb373dd3d389eb75c8ad2ade1a9828fb4797/_episodes_html/posthoc_tests.html)
 [![Non-Parametric Tests](../fig/NonParametricStatisticsChiSquare.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/c78efb373dd3d389eb75c8ad2ade1a9828fb4797/_episodes_html/nonparametric_tests.html)
 [![Power](../fig/EffectSizeandPower.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/c78efb373dd3d389eb75c8ad2ade1a9828fb4797/_episodes_html/power.html)
