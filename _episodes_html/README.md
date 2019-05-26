@@ -1,5 +1,5 @@
 
-# Introduction to Data Storytelling
+# Modules
 
 [![RStudio IDE](../fig/TheRStudioIDE.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/getting_started.html)
 [![Data Wrangling](../fig/BasicDataWranglingInR.jpg)](https://rawcdn.githack.com/mydatastory/r_dstory_intro_class/b4459719954d782db6481f0abdb5f44eb106ed5d/_episodes_html/data_management.html)
