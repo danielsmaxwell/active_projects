@@ -1,4 +1,4 @@
-## Introduction to Data Storytelling (R)
+# Introduction to Data Storytelling (R)
 
 -----------------------------------------------------------------------------------
 ## Notes
