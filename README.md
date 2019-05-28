@@ -1,4 +1,4 @@
-## Introduction to Data Storytelling (R)
+## Introduction to the New Statistics (R)
 
 ### Notes
 - All .html files are rendered using [raw githack](https://raw.githack.com) because htmlpreview.github stopped working properly.
