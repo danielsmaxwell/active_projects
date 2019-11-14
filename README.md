@@ -1,4 +1,4 @@
-## Introduction to the New Statistics (R)
+## DataStory Studio (R)
 
 ### Notes
 - All .html files are rendered using [raw githack](https://raw.githack.com) because htmlpreview.github stopped working properly.
